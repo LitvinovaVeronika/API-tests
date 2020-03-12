@@ -1,11 +1,9 @@
 package tests;
 
 import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.config.HttpClientConfig;
 import io.restassured.config.LogConfig;
 import io.restassured.filter.log.LogDetail;
-import io.restassured.specification.RequestSpecification;
 import tests.utils.users.User;
 import tests.utils.users.Users;
 
@@ -22,13 +20,6 @@ public class Config {
     private final static String ADMIN_TOKEN;
     private final static String CONFIG_FILE_PATH;
     private final static String API_VERSION = "v1.4";
-
-    public static final RequestSpecification CLOUD_SPEC = new RequestSpecBuilder()
-            .setBaseUri("https://" + System.getProperty("cloudServerName"))
-            .setBasePath("api")
-            .setAccept("application/json")
-            .setPort(Integer.parseInt(System.getProperty("cloudServerPort")))
-            .build();
 
     static void initialize() {
     }
